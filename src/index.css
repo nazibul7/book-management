@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+span{
+    color: red;
+    font-size: 11px;
+}
