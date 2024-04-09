@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Delete from './Delete'
 
 const AllBooks = () => {
     const [allBooks, setAllBooks] = useState([])
@@ -19,6 +20,7 @@ const AllBooks = () => {
             </div>
             <div>
                 {/* // Render all books */}
+                <Delete/>
             </div>
         </div>
     )
