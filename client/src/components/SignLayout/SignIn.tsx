@@ -32,7 +32,7 @@ const SignIn = () => {
     event.preventDefault()
     try {
       const data = loginSchema.parse(formData)
-      const response = await axios.post('http://localhost:5000/api/v1/users/login', data, { withCredentials: true })
+      const response = await axios.post('http://localhost:4000/api/v1/users/login', data, { withCredentials: true })
       setErrorMessage("")
       setFormErrors({})
       if (response.status >= 200 && response.status < 300) {

@@ -12,7 +12,7 @@ export const AuthContextProvider = ({ children }: any) => {
     useEffect(() => {
         const vaidateToken = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/api/v1/validate-token", { withCredentials: true })
+                const response = await axios.get("http://localhost:4000/api/v1/validate-token", { withCredentials: true })
                 if (response.status >= 200 && response.status < 300) {
                     setAuthStatus(!authStatus)
                     setName(response.data.name)
