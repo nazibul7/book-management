@@ -1,17 +1,10 @@
-import pg, { Client } from 'pg'
+import { PrismaClient } from "@prisma/client";
 
-const client = new Client({
-    host: process.env.POSTGRESS_DB_HOST,
-    user: process.env.POSTGRESS_DB_USER,
-    password: process.env.POSTGRESS_DB_PASSWORD,
-    database: process.env.POSTGRESS_DB_DATABASE_NAME,
-    port: Number(process.env.POSTGRESS_DB_PORT)
-})
-
+export const prisma=new PrismaClient()
 const connectDB = async () => {
     try {
-        await client.connect()
-        console.log(`Databse ${client.database} is connected successfully!!!`);
+        await prisma.$connect()
+        console.log(`Databse is connected successfully!!!`);
 
     } catch (error) {
         console.log(`Database connection failed ${error}!!!`);
@@ -19,4 +12,4 @@ const connectDB = async () => {
     }
 }
 
-export { connectDB, client }
+export { connectDB }
