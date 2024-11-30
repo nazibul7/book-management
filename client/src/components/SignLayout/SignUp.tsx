@@ -36,7 +36,7 @@ const SignUp = () => {
     event.preventDefault()
     try {
       const data = signUpSchema.parse(formData)
-      const response = await axios.post('http://localhost:5000/api/v1/users/register', data)
+      const response = await axios.post('http://localhost:4000/api/v1/users/register', data)
       // console.log(response.data.message);
       setErrorMessage("")
       setFormErrors({})
