@@ -16,10 +16,15 @@ app.use(express.urlencoded({ extended: true }))
 import userRouter from "./routes/user.route"
 import authRouter from "./routes/auth.route"
 import bookRouter from "./routes/book.route"
+import errorHandler from "./utils/errorHandler";
 
 app.use("/api/v1/users", userRouter)
 app.use("/api/v1", authRouter)
 app.use("/api/v1/books", bookRouter)
+
+
+app.use(errorHandler)
+
 export default app;
 
 
